@@ -1,7 +1,6 @@
 pass: ttud_20221_dungphuongtrung_k3
 
-KHO VL BAN OI doi ti
-Bai 1 kho that, bai 2 thi sao, giup ho cho nhanh voi :( 
+LÀM ĐƯỢC BAO NHIÊU CHO XIN TẠM ĐI
 
 B1: ANALYZE DELIVERY TRIPS
 Input dữ liệu đầu vào gồm 3 phần
