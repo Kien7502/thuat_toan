@@ -41,3 +41,11 @@ TR00000003 C00000000 2020-01-04
 
 B2: Steiner tree
 Một mạng truyền thông G bao gồm N máy chủ 1,2,...,N được kết nối với nhau bởi M đường truyền (2 chiều). Giữa 2 máy chủ i và j có thể có đường truyền hoặc không có. Trong trường hợp giữa hai máy chủ i và j có đường truyền thì c(i,j) là chi phí thuê đường truyền này.
+Một công ty cần tính toán phương án thuê 1 số đường truyền nào đó của mạng G để kết nối liên thông một số máy chủ trong tập R (R là tập con của {1,2,...., N}). Hãy tính toán phương án thuê đường truyền với tổng chi phí thuê là ít nhất.
+Input
+- Dòng 1: ghi 2 số nguyên dương N và M (1<= N, M <=30)
+- Dòng 2 đến M: mỗi dòng ghi 3 số nguyên dương i,j,w: có đường truyền giữa i và j với chi phí thuê là w (w = c(i,j))
+- Dòng M +2: ghi số nguyên dương K
+- Dòng M + 3: ghi K số nguyên dương đôi một khác nhau là chỉ số của các máy chủ trong R
+Output
+- Ghi ra tổng chi phí thuê nhỏ nhất tìm được
