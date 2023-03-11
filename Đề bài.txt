@@ -15,3 +15,8 @@ trong đó:
 Mỗi chuyến giao hàng có thể đi giao tới nhiều khách hàng. Thời gian làm việc của một chuyến gigao hàng được tính là từ thời điếm ngày giờ sớm nhất (giao khách hàng đầu tiên) đến thời điểm ngày giờ muộn nhất (giao khách hàng cuối cùng) mà chuyến này đã giao hàng cho khách. (Chú ý: số lượng chuyến có thể lên tới 10000và số lượng khách hàng được giao hàng bởi mỗi chuyến có thể lên đến 30)
 
 Phần thứ hai được kết thúc bởi một dòng chứa ***
+
+3. Phần thứ ba chứa các câu truy vấn (số lượng câu truy vấn có thể lên đến 10000). Truy vấn bao gồm nhiều dòng, mỗi dòng là thông tin về một loại truy vấn:
+- TOTAL_QTY: trả về tổng số lượng gói hàng mà tất cả các chuyến giao hàng có trong cơ sở dữ liệu đã giao
+- QTY_CUSTOMER <customer_code>: trả về tổng số lượng gói hàng đã giao được cho khách hàng có mã <customer_code?
+- QTY_MAX_PERIOD <from_date> <from_time> <to_date> <to_time>: trong khoảng thời gian từ (<from_date>, <from_time>) đến (<to_date> <to_time>) hãy tìm thời điểm (<date>, <time>) mà tại thời điểm đó tổng lượng hàng được giao là lớn nhất. Trả về lượng hàng lớn nhất đó
