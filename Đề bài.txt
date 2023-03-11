@@ -1,5 +1,6 @@
 pass: ttud_20221_dungphuongtrung_k3
 
+KHO VL BAN OI doi ti
 
 B1: ANALYZE DELIVERY TRIPS
 Input dữ liệu đầu vào gồm 3 phần
