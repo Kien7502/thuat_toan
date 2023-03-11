@@ -105,6 +105,7 @@ Input:
 Output
 10
 
+
 Giải thích:
 Ta thực hiện thuê 3 đường truyền (1, 2), (1, 3), và (2, 4) voiws tổng chi phí thuê là 1 + 2 + 7 = 10
 
@@ -118,3 +119,116 @@ B2:
 Giới hạn thời gian: 1 giây
 Giới hạn bộ nhớ: 256MB
 ---------------------------------
+
+#include<bits/stdc++.h>
+using namespace std;
+vector<string> days;
+vector<string> trip_code, customer_code, date, _time;
+vector<int> qty;
+map<string, int> date_time_qty;
+int total_qty(){
+    int sum=0;
+    for(int x: qty) sum += x;
+    return sum;
+}
+int qty_customer(string c_d){
+    int sum=0;
+    for(int i=0;i<customer_code.size();i++){
+        if(customer_code[i].compare(c_d)==0) sum+= qty[i];
+    }
+    return sum;
+}
+int get_idx_from_days(string day){
+    for(int i=0;i<days.size();i++){
+        if(days[i].compare(day) == 0){
+            return i;
+        }
+    }
+    return -1;
+}
+int time_to_int(string time){
+    int h = ((time[0]-'0')<<3) + ((time[0]-'0')<<1) +(time[1]-'0');
+    int m = ((time[3]-'0')<<3) + ((time[3]-'0')<<1)+(time[4]-'0');
+    int s = ((time[6]-'0')<<3) + ((time[6]-'0')<<1)+(time[7]-'0');
+    return h*3600+m*60+s;
+}
+int qty_max_prediod(string from_date, string from_time, string to_date, string to_time){
+    int sum=0;
+    int from_idx = get_idx_from_days(from_date);
+    int to_idx = get_idx_from_days(to_date);
+    for(int i=0;i<trip_code.size();i++){
+        if(from_idx<get_idx_from_days(date[i]) && get_idx_from_days(date[i])<to_idx){
+            sum += qty[i];
+        }else if(from_idx == get_idx_from_days(date[i])){
+            if(time_to_int(_time[i]) >= time_to_int(from_time)){
+                sum += qty[i];
+            }
+        }else if(to_idx == get_idx_from_days(date[i])){
+            if(time_to_int(_time[i]) <= time_to_int(from_time)){
+                sum += qty[i];
+            }
+        }
+    }
+    return sum;
+}
+int total_trip(){
+    set<string> s;
+    for(string trip: trip_code) s.insert(trip);
+    return s.size();
+}
+int travel_time_trip(string t_c){
+
+}
+int main(){
+    freopen("inp.txt", "r", stdin);
+    freopen("out.txt", "w", stdout);
+    string day;
+    string c_d, d, t;
+    int sl;
+    while(1){
+        cin>>day;
+        if(day.compare("*")==0) break;
+        days.push_back(day);
+    }
+    string t_c;
+    while(1){
+        cin>>t_c;
+        if(t_c.compare("***")==0) break;
+        cin>>c_d>>d>>t>>sl;
+        trip_code.push_back(t_c);
+        customer_code.push_back(c_d);
+        date.push_back(d);
+        _time.push_back(t);
+        qty.push_back(sl);
+
+        date_time_qty.insert(pair<string, int> (d+"-"+t, sl));
+    }
+    string query;
+    while(1){
+        cin>>query;
+        if(query.compare("***")==0) break;
+        if(query.compare("TOTAL_QTY")==0){
+            int res = total_qty();
+            cout<<res<<"\n";
+        }else if(query.compare("QTY_CUSTOMER")==0){
+            string c_d;
+            cin>>c_d;
+            int res = qty_customer(c_d);
+            cout<<res<<"\n";
+        }else if(query.compare("QTY_MAX_PERIOD")==0){
+            string from_date, from_time, to_date, to_time;
+            cin>>from_date>>from_time>>to_date>>to_time;
+            int res = qty_max_prediod(from_date, from_time, to_date, to_time);
+            cout<<res<<"\n";
+        }else if(query.compare("TOTAL_TRIPS")==0){
+            cout<<total_trip()<<"\n";
+        }else if(query.compare("TRAVEL_TIME_TRIP")==0){
+            int res = total_qty();
+            cout<<res<<"\n";
+        }else if(query.compare("MAX_CONFLICT_TRIP")==0){
+            int res = total_qty();
+            cout<<res<<"\n";
+        }
+    }
+    return 0;
+}
