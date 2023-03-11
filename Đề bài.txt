@@ -21,4 +21,18 @@ Phần thứ hai được kết thúc bởi một dòng chứa ***
 - QTY_CUSTOMER <customer_code>: trả về tổng số lượng gói hàng đã giao được cho khách hàng có mã <customer_code?
 - QTY_MAX_PERIOD <from_date> <from_time> <to_date> <to_time>: trong khoảng thời gian từ (<from_date>, <from_time>) đến (<to_date> <to_time>) hãy tìm thời điểm (<date>, <time>) mà tại thời điểm đó tổng lượng hàng được giao là lớn nhất. Trả về lượng hàng lớn nhất đó
     + VÍ dụ: trong khoảng từ (<from_date> = 2021-10-12, <from_time> = 07:15:20) đến (<to_date> = 2021-10-14, <to_time> = 08:13:40), thời điểm lượng giao hàng được lớn nhất là vào lúc (<date> = 2021-10-13, <time> = 13:31:21) và tổng lượng hàng giao được là 100, thì giá trị cần trả về là 100.
-- TOTAL_TRIP
+- TOTAL_TRIP: trả về số lượng chuyến giao hàng có trong cơ sở dữ liệu
+- TRAVEL_TIME_TRIP <trip_code>: trả về thời gian làm việc (theo đơn vị giây) của chuyến giao hàng có mã <trip_code>.
+- MAX_CONFLICT_TRIP: tìm một tập các chuyến đi lấy trong cơ sở dữ liệu sao cho báta kỳ hai chuyến đi nào thuộc tập cũng có khoảng thời gian làm việc bị trùng nhau và số lượng chuyến đi trong tập là lớn nhất. Trả về số lượng chuyến đi có tronng tập tìm được (số chuyến trong dữ liệu input đối với truy vấn loại này không vượt quá 20)
+Output: Mỗi dòng chứa kết quả của một truy vấn có trong Input
+
+Ví dụ:
+INPUT:
+
+2020-01-02
+2020-01-03
+2020-01-04
+2020-01-05
+2020-01-06
+*
+TR00000003 C00000000 2020-01-04 
