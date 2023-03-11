@@ -1,3 +1,10 @@
 pass: ttud_20221_dungphuongtrung_k3
 
-B1: 
+B1: ANALYZE DELIVERY TRIPS
+Input dữ liệu đầu vào gồm 3 phần
+1. Phần đầu tiên gồm một chuỗi các ngày liên tiếp, mỗi ngày trên một dòng theo định dạng YYYY-MM-DD(tức là dạng: Năm - ngày - tháng, Ví dụ 2022-01-23). Phần đầu tiên kết thúc bằng một dòng chứa *
+2. Phần thứ hai gồm thông tin về các chuyến giao hàng. Mỗi dòng mô tả thông tin về các chuyến giao hàng: giao cho khách hàng nào với số lượng bao nhiêu và được giao vào ngày giờ nào, có định dạng như sau:
+<trip_code> <customer_code_> <date> <time> qty
+
+trong đó:
+- <trip_code>: mã của chuyến giao hàng: là một xâu kí  tự độ dài trong khoảng [5, 20]
