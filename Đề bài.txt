@@ -36,3 +36,8 @@ INPUT:
 2020-01-06
 *
 TR00000003 C00000000 2020-01-04 
+
+(Đoạn này test thử test case nhé, tý t viết ví dụ nốt cho, nó hơi dài)
+
+B2: Steiner tree
+Một mạng truyền thông G bao gồm N máy chủ 1,2,...,N được kết nối với nhau bởi M đường truyền (2 chiều). Giữa 2 máy chủ i và j có thể có đường truyền hoặc không có. Trong trường hợp giữa hai máy chủ i và j có đường truyền thì c(i,j) là chi phí thuê đường truyền này.
