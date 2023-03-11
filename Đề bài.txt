@@ -49,3 +49,23 @@ Input
 - Dòng M + 3: ghi K số nguyên dương đôi một khác nhau là chỉ số của các máy chủ trong R
 Output
 - Ghi ra tổng chi phí thuê nhỏ nhất tìm được
+
+Ví dụ:
+Input:
+5 8
+1 2 1
+1 3 2
+1 5 5
+2 4 7
+2 5 6
+3 4 30
+3 5 3
+4 5 8
+4
+1 2 3 4
+
+Output
+10
+
+Giải thích:
+Ta thực hiện thuê 3 đường truyền (1, 2), (1, 3), và (2, 4) voiws tổng chi phí thuê là 1 + 2 + 7 = 10
