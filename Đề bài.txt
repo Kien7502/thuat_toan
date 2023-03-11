@@ -20,3 +20,5 @@ Phần thứ hai được kết thúc bởi một dòng chứa ***
 - TOTAL_QTY: trả về tổng số lượng gói hàng mà tất cả các chuyến giao hàng có trong cơ sở dữ liệu đã giao
 - QTY_CUSTOMER <customer_code>: trả về tổng số lượng gói hàng đã giao được cho khách hàng có mã <customer_code?
 - QTY_MAX_PERIOD <from_date> <from_time> <to_date> <to_time>: trong khoảng thời gian từ (<from_date>, <from_time>) đến (<to_date> <to_time>) hãy tìm thời điểm (<date>, <time>) mà tại thời điểm đó tổng lượng hàng được giao là lớn nhất. Trả về lượng hàng lớn nhất đó
+    + VÍ dụ: trong khoảng từ (<from_date> = 2021-10-12, <from_time> = 07:15:20) đến (<to_date> = 2021-10-14, <to_time> = 08:13:40), thời điểm lượng giao hàng được lớn nhất là vào lúc (<date> = 2021-10-13, <time> = 13:31:21) và tổng lượng hàng giao được là 100, thì giá trị cần trả về là 100.
+- TOTAL_TRIP
